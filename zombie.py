@@ -60,14 +60,14 @@ class Zombie:
         counter = 0
         while counter < how_many_die and len(Zombie.horde) > 2:
             random_zombie = random.randint(0,len(Zombie.horde) - 1)
-            Zombie.horde.pop(random_zombie)
+            cls.horde.pop(random_zombie)
             counter += 1
 
     @classmethod
     def increase_plague_level(cls):
         """Increase the current plague level by a random number from 0 to 20% of the horde's size."""
         random_increase = random.randint(0,round(0.2 * len(Zombie.horde)))
-        Zombie.plague_level += random_increase
+        cls.plague_level += random_increase
 
     @classmethod
     def deadliest_zombie(cls):
